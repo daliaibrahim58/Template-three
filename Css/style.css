@@ -1,0 +1,1014 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "PT Sans", sans-serif;
+}
+.container {
+    width: 80%;
+    margin: auto;
+}
+.list-unstyled {
+    list-style: none;
+}
+:root {
+    --mainColor: #7b5244;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+.title {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 100px;
+}
+.title-h2 {
+    font-size: 37px;
+}
+.title-span {
+    display: block;
+    margin: 20px auto 0 auto;
+    width: 80px;
+    background-color: var(--mainColor);
+    height: 2px;
+}
+.undotted-ul {
+    list-style: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 17px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s, visibility 0s .1s;
+}
+.undotted-ul-li {
+    display: inline-block;
+    background-color: #000;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.undotted-ul-li.special {
+    background-color: #fff;
+    transition: background-color .5s;
+}
+.undotted-ul-li.special:hover {
+    background-color: #000;
+}
+.ul{
+    margin-top: -60px;
+    list-style: none;
+    text-align: center;
+}
+.li{
+    display: inline-block;
+    margin: 0 10px;
+    color: #888888;
+    font-weight: bold;
+}
+.li:hover a{
+    transition: color .5s;
+    color: var(--mainColor);
+}
+p::selection{
+    background-color: transparent;
+    color: inherit;
+}
+del {
+    margin-left: 10px; /* Adjust the margin as needed */
+    color: #888888;
+}
+/* Header */
+.header-content {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+.header-content .navbar > ul {
+    display: flex;
+    flex-flow: row;
+}
+.header-content .navbar > ul > li .link-item {
+    margin: 0 25px;
+    font-weight: 510;
+    transition: color .5s;
+}
+.header-content .navbar > ul > li {
+    position: relative;
+    margin: 0 5px;
+}
+.header-content .navbar > ul > li::before {
+    content: "";
+    position: absolute;
+    border-width: 0 3px;
+    border-color: var(--mainColor);
+    border-style: solid;
+    width: 101%;
+    height: 212%;
+    top: -10px;
+    left: 0;
+    transition: transform .2s;
+    transform: scale3d(1, 0, 1);
+}
+.header-content .navbar > ul > li:after {
+    content: "";
+    position: absolute;
+    border-width: 3px 0;
+    border-color: var(--mainColor);
+    border-style: solid;
+    width: 104%;
+    height: 196%;
+    top: -10px;
+    left: 0;
+    transform: scale3d(0, 1, 1);
+    transition: transform .2s;
+    transition-delay: .25s;
+}
+.header-content .navbar > ul > li:hover::before,
+.header-content .navbar > ul > li:hover::after {
+    transform: scale3d(1, 1, 1);
+}
+.header-content .navbar ul li:first-of-type,
+.header-content .navbar ul li:nth-of-type(4),
+.header-content .navbar ul li:last-of-type {
+    position: relative;
+}
+.header-content .navbar ul li:first-of-type div {
+    position: absolute;
+    top: 53px;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    gap: 80px; /* Adjust the gap between columns */
+    padding: 10px; /* Optional: Add padding for better appearance */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, visibility 0s ease-in-out .2s; /* Add delay to visibility */
+    border: 2px solid var(--mainColor);
+    box-sizing: border-box;
+    z-index: 1; /* Ensure dropdown is above other elements */
+}
+
+.header-content .navbar ul li:first-of-type:hover div,
+.header-content .navbar ul li:first-of-type div:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+.header-content .navbar ul li:first-of-type div ul {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+}
+
+.header-content .navbar ul li:first-of-type div ul li {
+    white-space: nowrap; /* Prevent text from breaking */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis (...) for overflow text */
+    margin-bottom: 10px;
+}
+
+.header-content .navbar ul li:first-of-type div ul li a {
+    transition: color .5s; /* Move transition to the a element */
+}
+
+.header-content .navbar ul li:first-of-type div ul li a:hover {
+    color: var(--mainColor);
+}
+
+.header-content .navbar ul li:first-of-type div ul span.category-title {
+    font-size: 17px; /* Adjust the size as needed */
+    font-weight: bold; /* Optional: Add bold font weight */
+    display: block; /* Ensure the span is displayed as a block */
+    margin-bottom: 10px; /* Optional: Add margin below the span */
+    color: var(--mainColor);
+}
+
+.header-content .navbar ul li:first-of-type div ul hr {
+    margin-bottom: 10px; /* Add margin to the hr element */
+    border: 0; /* Optional: Remove default border */
+    border-top: 1px solid #ccc; /* Optional: Add custom border style */
+}
+
+.header-content .navbar ul li:first-of-type div ul:first-of-type {
+    grid-column: 1; /* Place in the first column */
+}
+
+.header-content .navbar ul li:first-of-type div ul:nth-of-type(2) {
+    grid-column: 2; /* Place in the second column */
+}
+
+.header-content .navbar ul li:first-of-type div ul:last-of-type {
+    grid-column: 3; /* Place in the third column */
+}
+
+.header-content .navbar ul li:nth-of-type(4) ul,
+.header-content .navbar ul li:last-of-type ul {
+    list-style: none;
+    position: absolute;
+    top: 53px;
+    left: 5px;
+    background-color: #fff;
+    width: 200px;
+    padding: 17px 10px;
+    border: 2px solid var(--mainColor);
+    box-sizing: border-box;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, visibility 0s ease-in-out .1s; /* Add delay to visibility */
+    z-index: 1; /* Ensure dropdown is above other elements */
+}
+
+.header-content .navbar ul li:nth-of-type(4) ul li,
+.header-content .navbar ul li:last-of-type ul li {
+    margin-bottom: 5px;
+}
+
+.header-content .navbar ul li:nth-of-type(4) ul li a,
+.header-content .navbar ul li:last-of-type ul li a {
+    transition: color .5s;
+}
+
+.header-content .navbar ul li:nth-of-type(4) ul li a:hover,
+.header-content .navbar ul li:last-of-type ul li a:hover {
+    color: var(--mainColor);
+}
+
+.header-content .navbar ul li:nth-of-type(4):hover ul,
+.header-content .navbar ul li:last-of-type:hover ul{
+    visibility: visible;
+    opacity: 1;
+}
+
+.header-content .login ul {
+    display: flex;
+    flex-flow: row;
+}
+.header-content .login ul li a {
+    margin: 0 10px;
+    transition: color 1s;
+}
+.header-content .login ul li a:hover {
+    color: var(--mainColor);
+}
+.header-content .login ul li:nth-of-type(3) i::after {
+    display: inline-block;
+    content: "0";
+    background-color: var(--mainColor);
+    border-radius: 50%;
+    color: #fff;
+    width: 15px;
+    font-size: 13px;
+    text-align: center;
+    position: relative;
+    right: 1px;
+    bottom: 2px;
+}
+
+/* Slider */
+section.slider .container {
+    position: relative;
+}
+section.slider .container i.right,
+section.slider .container i.left {
+    position: absolute;
+    bottom: 50%;
+    background-color: #fff;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    outline: 2px solid #fff;
+    outline-offset: 4px; /* Adjust the value as needed for the desired space */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s, visibility 0s .1s, background-color .5s, outline-color .5s, transform .5s, transform 1s;
+    transform: translateY(80%) translateX(100%); /* Start off-screen to the right */
+}
+section.slider .container i.right {
+    right: 55px;
+}
+section.slider .container i.left {
+    left: 55px;
+    transform: translateY(80%) translateX(-100%); /* Start off-screen to the left */
+}
+section.slider .container:hover i.right,
+section.slider .container:hover i.left {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(80%) translateX(0); /* Slide into view */
+}
+section.slider .container i:hover {
+    color: #fff;
+    background-color: #000;
+    outline-color: #000;
+}
+section.slider img {
+    width: 100%;
+}
+section.slider .container:hover ul {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Category */
+.category .container {
+    margin-top: 110px;
+    perspective: 1000px; /* Add perspective to the container */
+}
+.category-content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    position: relative;
+}
+.category-content ul {
+    visibility: visible;
+    opacity: 1;
+    bottom: -110px;
+}
+.category-content ul li.special {
+    background-color: var(--mainColor);
+}
+.category-content ul li {
+    transition: background-color .5s;
+}
+.category-content ul li:hover {
+    background-color: var(--mainColor);
+}
+.category-content > div img {
+    width: 100%;
+}
+.category-content > div {
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    transform-style: preserve-3d; /* Preserve the 3D effect */
+    padding: 5px;
+}
+.category-content > div:hover {
+    transform: translateZ(20px) scale(1.01); /* Creates a 3D effect and scales up the div */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); /* Adds a slight grey shadow */
+}
+.category-content > div a {
+    display: block;
+    margin: 15px 0 10px 0;
+    color: #888888;
+    text-transform: capitalize;
+}
+.category-content > div p {
+    font-size: 20px;
+    font-weight: bold;
+    transition: color .5s;
+}
+.category-content > div p:hover {
+    color: var(--mainColor);
+}
+.category-content > div i {
+    position: absolute;
+    background-color: var(--mainColor);
+    color: #fff;
+    right: 4px;
+    bottom: 5px;
+    width: 40px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s, background-color 1s, visibility 0s .1s;
+}
+.category-content > div:hover i {
+    opacity: 1;
+    visibility: visible;
+}
+.category-content > div i:hover {
+    background-color: #000;
+}
+/* Discounts */
+.discount .container{
+margin-top: 230px;
+display: grid;
+grid-template-columns:40% 25% 25%;
+gap: 5%;
+}
+.discount .container .big-discount{
+    background-color:  #faf0e6;
+    position: relative;
+}
+.discount .container ul{
+    position: absolute;
+    right: 7px;
+    bottom: 16px;
+}
+.discount .container ul li{
+    width: 50px;
+    height: 2px;
+    display: inline-block;
+    border-radius: 20%;
+    background-color: #888888;
+}
+.discount .container ul li:nth-of-type(2){
+    margin: 0 10px;
+    background-color: var(--mainColor);
+}
+.discount .container .big-discount:hover {
+    cursor: pointer;
+}
+.discount .container .big-discount:hover .up,
+.discount .container .big-discount:hover p {
+    cursor: initial; /* or any other cursor style you want */
+}
+.discount .container .big-discount p:active{
+cursor: move;
+}
+.discount .container .big-discount .up{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: 25px;
+}
+.discount .container .big-discount .up div:nth-child(1){
+    background-image: url(../images/quote.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+.discount .container .big-discount .up div:nth-child(2){
+    position: absolute;
+    right: -150px;
+    top: -2px;
+}
+.discount .container .big-discount .up div:nth-child(2) p{
+    color:#888888;
+    margin-top: 5px;
+}
+.discount .container .big-discount .up div:nth-child(2) a{
+    font-size: 20px;
+}
+.discount .container .big-discount > div:nth-child(2){
+    text-align: center;
+}
+.discount .container .big-discount > div.second p{
+ color: #888888;
+ word-spacing: 2px;
+line-height: 1.7;
+box-sizing: border-box;
+padding: 0 20px 20px;
+text-align: justify;
+margin-bottom: 40px;
+}
+.discount .small-first img, .discount .small-second img{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    max-width: 100%; /* Ensures the image does not exceed the width of its container */
+    max-height: 100%; /* Ensures the image does not exceed the height of its container */
+}
+.discount .small-first, .discount .small-second{
+    position: relative;
+    overflow: hidden; /* Ensure content inside doesn't overflow */
+}
+.discount .small-first > div:last-of-type, .discount .small-second > div:last-of-type{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.discount .small-first img:hover,
+.discount .small-second img:hover {
+    transform: scale(1.1);
+    transition: transform 1s ease;
+}
+/* Under-discount */
+.under-discount .container{
+    margin-top: 60px;
+    display: flex;
+    border-bottom: 2px solid #ccc;
+}
+.under-discount .container > div{
+    flex: 1;
+    border-right: 2px solid #ccc;
+    text-align: center;
+    margin-bottom: 70px;
+}
+.under-discount .container > div h2{
+    font-size: 20px;
+}
+.under-discount .container > div p{
+    color: #888888;
+    margin-top: 10px;
+}
+.under-discount .container > div .icon{
+    transition: .6s;
+}
+.under-discount .container > div:last-child{
+    border-right: none;
+}
+.under-discount .container > div:nth-of-type(1) .icon{
+    background-image: url(../images/service-icon.png);
+    height: 70px;
+    background-repeat: no-repeat;
+    background-position: center 5px;
+}
+.under-discount .container > div:nth-of-type(1):hover .icon{
+    background-position: center -82px;
+}
+.under-discount .container > div:nth-of-type(2) .icon{
+    background-image: url(../images/service-icon.png);
+    height: 70px;
+    background-repeat: no-repeat;
+    background-position: center -180px;
+}
+.under-discount .container > div:nth-of-type(2):hover .icon{
+    background-position: center -275px;
+}
+.under-discount .container > div:nth-of-type(3) .icon{
+    background-image: url(../images/service-icon.png);
+    height: 70px;
+    background-repeat: no-repeat;
+    background-position: center -365px;
+}
+.under-discount .container > div:nth-of-type(3):hover .icon{
+    background-position: center -456px;
+}
+.under-discount .container > div:nth-of-type(4) .icon{
+    background-image: url(../images/service-icon.png);
+    height: 70px;
+    background-repeat: no-repeat;
+    background-position: center -551px;
+}
+.under-discount .container > div:nth-of-type(4):hover .icon{
+    background-position: center -638px;
+}
+.under-discount .container > div:nth-of-type(5) .icon{
+    background-image: url(../images/service-icon.png);
+    height: 70px;
+    background-repeat: no-repeat;
+    background-position: center -735px;
+}
+.under-discount .container > div:nth-of-type(5):hover .icon{
+    background-position: center -826px;
+}
+/* featured-product */ 
+.featured-product .container{
+    margin-top: 50px;
+}
+.featured-imges-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.featured-imges-content > div {
+    position: relative;
+    flex: 1 0 30%; /* Basis set to 30% to accommodate three divs per row, with some space for margin */
+    box-sizing: border-box;
+    margin:0 40px 120px 0;
+}
+
+.featured-images {
+    position: relative; /* Ensure positioning context for .ul-img */
+    overflow: hidden; /* Ensure .ul-img is contained within .featured-images */
+    backface-visibility: hidden; /* Hide backface */
+    transform-style: preserve-3d; /* Maintain 3D space for children */
+    transition: transform 1s; /* Apply transition effect */
+    perspective: 1000px; /* Add perspective for 3D effect */
+}
+.featured-images img {
+    display: block; /* Ensure images behave as block elements */
+    width: 100%;
+}
+.img-container{
+    width: 100%;
+}
+.featured-images:hover .img-container{
+    transform: scale3d(0,1,0);
+    transition: transform .5s;
+}
+.ul-img {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure .ul-img spans the entire width of .featured-images */
+    height: 100%;
+    text-align: center; /* Center align content horizontally */
+    transform-style: preserve-3d; /* Maintain 3D space */
+}
+.ul-img ul {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+}
+
+.ul-img ul li.top {
+    position: relative;
+    top: -30px;
+}
+
+.ul-img li {
+    background-color: #000;
+    width: 40px;
+    height: 35px;
+    border-radius: 5%;
+    text-align: center;
+    margin-right: -10px;
+}
+
+.ul-img li:hover {
+    background-color: var(--mainColor);
+    transition: background-color .5s;
+}
+.ul-img i {
+    color: #fff;
+    line-height: 35px;
+}
+
+.featured-imges-content .stars {
+    position: absolute;
+    bottom: -35px;
+}
+
+.featured-imges-content .stars i:not(i:last-of-type),
+ .featured-imges-content > div:nth-of-type(5) .stars i {
+    color: gold;
+}
+.featured-imges-content .stars i:last-of-type,
+.featured-imges-content > div:nth-of-type(2) .stars i,
+.featured-imges-content > div:nth-of-type(4) .stars i{
+    color: #ccc;
+}
+.featured-imges-content > div > div:last-of-type {
+    position: absolute;
+    bottom: -90px;
+}
+
+.featured-imges-content > div > div:last-of-type a {
+    display: block;
+    margin: 10px 0 7px 0;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: .5px;
+}
+
+.featured-imges-content > div > div:last-of-type a:hover {
+    color: var(--mainColor);
+    transition: color .5s;
+}
+
+.featured-imges-content > div > div:last-of-type p {
+    font-weight: bold;
+}
+
+.featured-imges-content > div > i {
+    position: absolute;
+    left: -20px;
+    bottom: -20px;
+    border: 3px solid #ccc;
+    background-color: #fff;
+    width: 35px;
+    height: 35px;
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    font-weight: bolder;
+    visibility: hidden;
+    opacity: 0;
+}
+.featured-imges-content > div:nth-of-type(3) > i{
+    left: 350px;
+}
+.featured-imges-content > div > i:hover {
+    border-color: var(--mainColor);
+    color: var(--mainColor);
+    transition: color .5s, border-color .5s;
+}
+
+.featured-imges-content > div:hover > i {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s, visibility 0 .1s;
+}
+.featured-imges-content div:nth-of-type(2) .featured-images .ul-img::before,
+.featured-imges-content div:nth-of-type(4) .featured-images .ul-img::before,
+.featured-imges-content div:nth-of-type(5) .featured-images .ul-img::before,
+.featured-imges-content div:nth-of-type(6) .featured-images .ul-img::before,
+.featured-imges-content div:nth-of-type(2) .featured-images > .img-container::after,
+.featured-imges-content div:nth-of-type(4) .featured-images > .img-container::after,
+.featured-imges-content div:nth-of-type(5) .featured-images > .img-container::after,
+.featured-imges-content div:nth-of-type(6) .featured-images > .img-container::after{
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 20px;
+    color: #fff;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+}
+.featured-imges-content div:nth-of-type(2) .featured-images .ul-img::before,
+.featured-imges-content div:nth-of-type(4) .featured-images .ul-img::before,
+.featured-imges-content div:nth-of-type(5) .featured-images .ul-img::before,
+.featured-imges-content div:nth-of-type(6) .featured-images .ul-img::before{
+    background-color: #000;
+    top: 10px;
+    left: 10px;
+    visibility: visible;
+    opacity: 1;
+    content: "sale";
+}
+.featured-imges-content div:nth-of-type(2) .featured-images  .img-container::after,
+.featured-imges-content div:nth-of-type(4) .featured-images  .img-container::after,
+.featured-imges-content div:nth-of-type(5) .featured-images  .img-container::after,
+.featured-imges-content div:nth-of-type(6) .featured-images  .img-container::after
+{
+    background-color: var(--mainColor);
+    top: 10px;
+    right: 10px;
+}
+.featured-imges-content div:nth-of-type(2) .featured-images  .img-container::after{
+    content: "8% off";
+}
+.featured-imges-content div:nth-of-type(4) .featured-images  .img-container::after{
+    content: "2% off";
+}
+.featured-imges-content div:nth-of-type(5) .featured-images  .img-container::after{
+    content: "11% off";
+}
+.featured-imges-content div:nth-of-type(6) .featured-images  .img-container::after{
+    content: "6% off";
+}
+.featured-imges-content div:nth-of-type(2) .featured-images:hover .img-container::after,
+.featured-imges-content div:nth-of-type(4) .featured-images:hover .img-container::after,
+.featured-imges-content div:nth-of-type(5) .featured-images:hover .img-container::after,
+.featured-imges-content div:nth-of-type(6) .featured-images:hover .img-container::after{
+    visibility: hidden;
+    opacity: 0;
+}
+/* Video section */
+.video-section .container {
+    margin-top: 90px;
+}
+
+.video-section .container .video-content {
+    display: flex;
+    gap: 25px; /* Space between video and video-info */
+}
+
+.video-section .container .video-content .video {
+    flex: 30%; /* Take 20% of the width */
+    display: flex;
+    align-items: center;
+}
+
+.video-section .container .video-content .video video {
+    width: 100%;
+    height: 100%; /* Ensures video maintains aspect ratio */
+    object-fit: cover;
+}
+
+.video-section .container .video-content .video-info {
+    flex: 60%; /* Take 70% of the width */
+    background-color: #faf0e6;
+    position: relative;
+    padding: 30px;
+}
+.video-section .container .video-content .video-info ul{
+position: absolute;
+right: 10px;
+bottom: 10px;
+list-style: none;
+}
+.video-section .container .video-content .video-info ul li{
+display: inline-block;
+width: 50px;
+height: 2px;
+background-color: #000;
+border-radius: 20%;
+margin: 0 7px;
+}
+.video-section .container .video-content .video-info ul li:first-of-type{
+    background-color: var(--mainColor);
+}
+.video-section .container .video-content .video-info .data{
+    position: relative;
+}
+.video-section .container .video-content .video-info a{
+    position: absolute;
+    right: 365px;
+    top: 40px;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+.video-section .container .video-content .video-info a:hover{
+    color: var(--mainColor);
+    transition: color .5s;
+}
+.video-section .container .video-content .video-info .data h2{
+    font-size: 37px;
+}
+.video-section .container .video-content .video-info .data h2, .video-section .container .video-content .video-info .data p{
+color: var(--mainColor);
+}
+.video-section .container .video-content .video-info .desc{
+    margin-top: 30px;
+}
+.video-section .container .video-content .video-info p{
+    line-height: 2;
+    color: #888888;
+}
+/* logo-photos */
+.logos-photos .container{
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+.logos-photos .logos-content{
+    position: relative;
+    display: flex;
+    gap: 80px;
+}
+.logos-photos .logos-content img{
+    flex: 1;
+}
+.logos-photos .logos-content i{
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    visibility: hidden;
+    opacity: 0;
+}
+.logos-photos:hover i{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s, visibility .5s .1s;
+}
+.logos-photos .logos-content i:hover{
+    border-color: var(--mainColor);
+    color: var(--mainColor);
+    transition: all .5s;
+}
+.logos-photos .logos-content i.right{
+    right: -40px;
+}
+.logos-photos .logos-content i.left{
+    left: -40px;
+}
+/* footer */
+.footer {
+    background-color: #000;
+    height: 80vh;
+    position: relative;
+  }
+  
+  .footer .container {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .footer .container .footer-content {
+    /* No changes needed here */
+  }
+  
+  .footer .container .footer-content .upper-content {
+    display: grid;
+    grid-template-columns: 35% 15% 10% 20%;
+    gap: 5%; /* Adjust as needed */
+  }
+  
+  .footer .container .footer-content .upper-content .content-one .info p {
+    color: #888888;
+    margin: 30px 0;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+  }
+  
+  .footer .container .footer-content .upper-content .content-one .apps img {
+    margin-right: 5px;
+  }
+  
+  .footer .container .footer-content .upper-content .content-two > a,
+  .footer .container .footer-content .upper-content .content-three > a,
+  .footer .container .footer-content .upper-content .content-four > a{
+    color: #fff;
+    font-size: 18px;
+  }
+  .footer .container .footer-content .upper-content .content-two ul,
+  .footer .container .footer-content .upper-content .content-three ul{
+    margin-top: 50px;
+    list-style: none;
+    perspective: 600px;
+  }
+  .footer .container .footer-content .upper-content .content-two ul li,
+  .footer .container .footer-content .upper-content .content-three ul li{
+      margin: 20px 0;
+
+  }
+  .footer .container .footer-content .upper-content .content-two ul li a,
+  .footer .container .footer-content .upper-content .content-three ul li a {
+    color: #888888;
+    transform: translate3d(0,0,1); /* Default size */
+    font-size: 15px;
+    display: inline-block; /* Ensure the transform works */
+    transition: transform 0.3s ease; /* Add a smooth transition */
+}
+
+.footer .container .footer-content .upper-content .content-two ul li a:hover,
+.footer .container .footer-content .upper-content .content-three ul li a:hover{
+    transform-style: preserve-3d;
+    transform: translate3d(6px,0,0); 
+    color: #fff;
+}
+.footer .container .footer-content .upper-content .content-four .tel{
+    border-bottom: 1px solid #888888;
+    position: relative;
+    margin-top: 130px;
+}
+.footer .container .footer-content .upper-content .content-four .tel i{
+    color: #fff;
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+}
+.footer .container .footer-content .upper-content .content-four .tel i:hover{
+    color: var(--mainColor);
+    transition: color .5s;
+}
+.footer .container .footer-content .upper-content .content-four ul{
+    list-style: none;
+    margin-top: 50px;
+}
+.footer .container .footer-content .upper-content .content-four ul li{
+    display: inline-block;
+    margin: 0 10px;
+}
+.footer .container .footer-content .upper-content .content-four ul li a i{
+    color: #888888;
+}
+.footer .container .footer-content .upper-content .content-four ul li a:hover i{
+    color: #fff;
+    transition: color .5s;
+}
+.lower-content{
+    position: absolute;
+    width: 100%;
+    bottom: 60px;
+    border-top: 1px solid #888888;
+}
+.lower-content .container{
+    position: absolute;
+    bottom: 20px;
+}
+.lower-content .container .info{
+  position: relative;
+  top: 20px;
+}
+.lower-content .container .info P{
+    color: #888888;
+    font-size: 15px;
+    letter-spacing: .5px;
+}
+.lower-content .container .info P a{
+    color: #888888;
+    text-decoration: none; /* Remove the default underline */
+    border-bottom: 1px solid #888888; /* Add custom underline */
+    font-size: 15px;
+    letter-spacing: .5px;
+}
+.lower-content .container .info P a:hover{
+    color:#fff;
+    border-bottom: none;
+    transition: all .5s;
+}
+.lower-content .container .small-img{
+  position: absolute;
+  right: 0;
+}
+.lower-content .container .small-img img{
+filter: grayscale(100);
+margin: 0 2px;
+}
+.lower-content .container .small-img img:hover{
+    filter:grayscale(0);
+    transition: all .3s;
+}
