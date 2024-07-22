@@ -568,7 +568,7 @@ margin-bottom: 40px;
 
 .featured-imges-content > div {
     position: relative;
-    flex: 1 0 20%; /* Basis set to 30% to accommodate three divs per row, with some space for margin */
+    flex: 1 0 25%; /* Basis set to 30% to accommodate three divs per row, with some space for margin */
     box-sizing: border-box;
     margin:0 40px 120px 0;
 }
