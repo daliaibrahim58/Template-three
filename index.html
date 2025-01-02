@@ -1,73 +1,514 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Template with Sidebar</title>
-    <!-- Updated to use Bootstrap 5 CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="Css/font-awesome.min.css">
-</head>
-<body>
-
-    <!-- Header -->
-    <header class="bg-light shadow-sm">
-        <div class="container d-flex justify-content-between align-items-center py-3">
-            <img src="images/logo.png" alt="Logo" class="img-fluid" style="width: 100px;">
-            <!-- Sidebar Toggle Button for Small Devices -->
-            <button class="btn btn-primary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
-                <i class="fa fa-bars"></i>
-            </button>
-            <!-- Normal Navbar for Larger Devices -->
-            <nav class="d-none d-lg-block">
-                <ul class="nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Furniture
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Tables</a></li>
-                            <li><a class="dropdown-item" href="#">Sofas</a></li>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="Css/style.css">
+        <link rel="stylesheet" href="Css/font-awesome.min.css">
+        <meta charset="utf-8">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <title> Template Three </title>
+    </head>
+    <body>
+      
+        <!-- Header -->
+         <header>
+            <div class="container">
+                <div class="header-content">
+                    <img src="images/logo.png" alt="logi.1">
+                    <nav class="navbar">
+                        <ul class="list-unstyled">
+                            <li><a class="link-item" href="#">Furniture</a>
+                                <div class="grid-area">
+                                    <ul>
+                                        <li><a href="#"><span class="category-title">Tables</span></a><hr></li>
+                                        <li><a href="#">Study Table</a></li>
+                                        <li><a href="#">Coffee</a></li>
+                                        <li><a href="#">Stools</a></li>
+                                        <li><a href="#">Writing Desk</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="#"><span class="category-title">Dining</span></a><hr></li>
+                                        <li><a href="#">Dining Chairs</a></li>
+                                        <li><a href="#">Bar Stools</a></li>
+                                        <li><a href="#">Benches</a></li>
+                                        <li><a href="#">Dining Tables</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="#"><span class="category-title">Sofas</span></a><hr></li>
+                                        <li><a href="#">Armchairs</a></li>
+                                        <li><a href="#">Day Beds</a></li>
+                                        <li><a href="#">Boufs</a></li>
+                                        <li><a href="#">Lounge Chairs</a></li>
+                                    </ul>
+                                </div> <!-- grid-area -->
+                            </li>                            
+                            <li><a class="link-item" href="#">Armoires</a></li>
+                            <li><a class="link-item" href="#">Study Table</a></li>
+                            <li><a class="link-item" href="#">Plastic Chair</a> <!-- fourth -->
+                                <ul>
+                                    <li><a href="#">Bookshelves</a></li>
+                                    <li><a href="#">Cupboards</a></li>
+                                    <li><a href="#">Shoe Racks</a></li>
+                                </ul>
+                            </li> <!-- /fourth -->
+                            <li><a class="link-item" href="#">Wardrobes</a></li>
+                            <li><a class="link-item" href="#">More</a> <!-- last -->
+                                <ul>
+                                    <li><a href="#">Office Chairs</a></li>
+                                    <li><a href="#">Wooden Chairs</a></li>
+                                    <li><a href="#">Blogs</a></li>
+                                </ul>
+                            </li> <!-- /last -->
                         </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Armoires</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Plastic Chair</a></li>
+                    </nav> <!-- /nav -->
+                    <div class="login">
+                        <ul class="list-unstyled">
+                            <li><a href="#"><i class="fa fa-search fa-lg"></i></a></li>
+                            <li><a href="#"><i class="fa fa-user fa-lg"></i></a></li>
+                            <li><a href="#"><i class="fa fa-cart-plus fa-lg"></i> Your Bag </a></li>
+                        </ul>
+                    </div> <!-- /login -->
+                </div> <!-- /header-content -->
+            </div> <!-- /container -->
+         </header>
+         <!-- Slider -->
+         <section class="slider">
+            <div class="container">
+                <img src="images/main-banner-1-1600x700.jpg">
+                <i class="right fa fa-angle-right fa-3x" aria-hidden="true"></i>
+                <i class="left fa fa-angle-left fa-3x" aria-hidden="true"></i>
+                <ul class="undotted-ul">
+                    <li class="undotted-ul-li special"></li>
+                    <li class="undotted-ul-li"></li> <!-- Fixed the quote -->
                 </ul>
-            </nav>
-            <div class="d-flex gap-3">
-                <a href="#" class="text-secondary"><i class="fa fa-search fa-lg"></i></a>
-                <a href="#" class="text-secondary"><i class="fa fa-user fa-lg"></i></a>
-                <a href="#" class="text-secondary"><i class="fa fa-cart-plus fa-lg"></i> Your Bag</a>
+            </div> <!-- /container -->
+        </section> <!-- /slider -->
+        <!-- Category -->
+        <section class="category"> 
+            <div class="container"> 
+                <div class="title"> 
+                    <h2 class="title-h2">special category</h2>
+                    <span class="title-span"></span>
+                </div> <!-- /title -->
+                <div class="category-content"> 
+                    <div>
+                        <a href="#"><img src="images/category-banner1.jpg" alt="category1"></a>
+                        <a href="#">most popular</a>
+                        <p>classic chair collection</p>
+                        <i class="fa fa-angle-double-right fa-lg" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <a href="#"><img src="images/category-banner2.jpg" alt="category2"></a>
+                        <a href="#">most popular</a>
+                        <p>classic chair collection</p>
+                        <i class="fa fa-angle-double-right fa-lg" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <a href="#"><img src="images/category-banner3.jpg" alt="category3"></a>
+                        <a href="#">most popular</a>
+                        <p>wooden chair collection</p>
+                        <i class="fa fa-angle-double-right fa-lg" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <a href="#"><img src="images/category-banner4.jpg" alt="category4"></a>
+                        <a href="#">most popular</a>
+                        <p>study chair collection</p>
+                        <i class="fa fa-angle-double-right fa-lg" aria-hidden="true"></i>
+                    </div>
+                    <ul class="undotted-ul">
+                        <li class="undotted-ul-li special"></li>
+                        <li class="undotted-ul-li"></li> <!-- Fixed the quote -->
+                    </ul>
+                </div> <!-- /category-content -->
+            </div> <!-- /container -->
+        </section> <!-- /category -->
+        <!-- Discount -->
+         <div class="discount"> <!-- discount -->
+            <div class="container">
+                <div class="big-discount"> <!-- big-discount -->
+                    <div class="up"> <!-- up -->
+                        <div></div>
+                        <div>
+                          <a href="#">penelope astrid</a>
+                          <p>(Marketing)</p>
+                        </div>
+                    </div> <!-- /up -->
+                    <div class="second">
+                        <p>
+                            Lorem lpsum is simply dummy text of the printing <br> and typesetting industry. Lorem ipsum has
+                            text <br> Lorem lpsum is simply dummy text of the printing <br> and typesetting industry. Lorem lpsum is 
+                            simply <br> dummy text of the printing and typesetting industry.
+                        </p>                        
+                    </div>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div> <!-- /big-discount -->
+                <div class="small-first"> <!-- small-first -->
+                    <div><img src="images/cms-banner-1.jpg" alt="discount"></div>
+                    <div>
+                        <span>30% Discount</span>
+                        <h2>Designing Interior</h2>   
+                    </div>
+                </div> <!-- /small-first -->
+                <div class="small-second"> <!-- small-second -->
+                    <div><img src="images/cms-banner-2.jpg" alt="discount"></div>
+                    <div>
+                        <span>20% Discount</span>
+                        <h2>Wooden Study Table</h2>   
+                    </div>
+                </div> <!-- /small-second -->
             </div>
-        </div>
-    </header>
-
-    <!-- Offcanvas Sidebar for Small Devices -->
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="sidebarMenuLabel">Menu</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Furniture</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Armoires</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Plastic Chair</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">More</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <!--Ensure scripts are included at the bottom of the body -->
-    <!-- Bootstrap bundle includes both Bootstrap JS and Popper -->
-    <script src="js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+         </div> <!-- /discount -->
+         <!-- Under-Discount -->
+          <div class="under-discount"> <!-- under-discount -->
+            <div class="container"> <!-- container -->
+                <div>
+                    <!-- url(../image/codezeel/service-icon.png) -->
+                     <div class="icon"></div>
+                     <div class="under-content-info">
+                        <h2>free delivery</h2>
+                        <p>Free Shipping On All Order</p>
+                     </div>
+                </div>
+                <div>
+                    <!-- url(../image/codezeel/service-icon.png) -->
+                     <div class="icon"></div>
+                     <div class="under-content-info">
+                        <h2>money return</h2>
+                        <p>Back Guarantee in 7 days</p>
+                     </div>
+                </div>
+                <div>
+                    <!-- url(../image/codezeel/service-icon.png) -->
+                    <div class="icon"></div>
+                     <div class="under-content-info">
+                        <h2>member discount</h2>
+                        <p>On every order over $130.00</p>
+                     </div>
+                </div>
+                <div>
+                    <!-- url(../image/codezeel/service-icon.png) -->
+                    <div class="icon"></div>
+                     <div class="under-content-info">
+                        <h2>online support</h2>
+                        <p>Support 24 hours a day</p>
+                     </div>
+                </div>
+                <div>
+                    <!-- url(../image/codezeel/service-icon.png) -->
+                    <div class="icon"></div>
+                     <div class="under-content-info">
+                        <h2>return policy</h2>
+                        <p>Send within 30 days</p>
+                     </div>
+                </div>
+            </div> <!-- /container -->
+          </div> <!-- /under-discount -->
+          <!-- Featured-product -->
+           <div class="featured-product">
+            <div class="container">
+                <div class="title"> 
+                    <h2 class="title-h2">Featured Product</h2>
+                    <span class="title-span"></span>
+                </div> <!-- /title -->
+                <ul class="ul">
+                    <li class="li"><a href="#">Wooden Chair</a></li>
+                    <li class="li"><a href="#">Plastic Chair</a></li>
+                    <li class="li"><a href="#">Study Table</a></li>
+                    <li class="li"><a href="#">Armoires</a></li>
+                </ul>
+                <div class="featured-imges-content"> <!-- featured-imges-content -->
+                    <div>
+                        <div class="featured-images">
+                            <div class="img-container">
+                                <img src="images/02-378x450.jpg" alt="featured-imges">
+                            </div>
+                            <div class="ul-img">
+                                <img src="images/03-378x450.jpg" alt="featured-imges">
+                                <ul class="ul">
+                                   <li class="bottom li"><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                   <li class="top li"><a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                   <li class="bottom li"><a href="#"><i class="fa fa-align-left" aria-hidden="true"></i></a></li>
+                                   <li class="top li"><a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="stars"> <!-- stars -->
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </div> <!-- /stars -->
+                        <div>
+                            <a href="#">Aliquam Quaerat</a>
+                            <p>$108.80</p>
+                        </div>
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <div class="featured-images">
+                            <div class="img-container">
+                                <img src="images/05-378x450.jpg" alt="featured-imges">
+                            </div>
+                            <div class="ul-img">
+                                <img src="images/08-378x450.jpg" alt="featured-imges">
+                                <ul class="ul">
+                                   <li class="bottom li"><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                   <li class="top li"><a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                   <li class="bottom li"><a href="#"><i class="fa fa-align-left" aria-hidden="true"></i></a></li>
+                                   <li class="top li"><a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="stars"> <!-- stars -->
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </div> <!-- /stars -->
+                        <div>
+                            <a href="#">Aliquam Quaerat</a>
+                            <p>$110.00<del>$219.00</del></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="featured-images">
+                            <div class="img-container">
+                                <img src="images/11-378x450.jpg" alt="featured-imges">
+                            </div>
+                            <div class="ul-img">
+                                <img src="images/13-378x450.jpg" alt="featured-imges">
+                                <ul class="ul">
+                                   <li class="bottom li"><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                   <li class="top li"><a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                   <li class="bottom li"><a href="#"><i class="fa fa-align-left" aria-hidden="true"></i></a></li>
+                                   <li class="top li"><a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="stars"> <!-- stars -->
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </div> <!-- /stars -->
+                        <div>
+                            <a href="#">Aliquam Quaerat</a>
+                            <p>$97.99</p>
+                        </div>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <div class="featured-images">
+                            <div class="img-container">
+                                <img src="images/15-378x450.jpg" alt="featured-imges">
+                            </div>
+                            <div class="ul-img">
+                                <img src="images/03-378x450.jpg" alt="featured-imges">
+                                <ul class="ul">
+                                   <li class="bottom li"><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                   <li class="top li"><a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                   <li class="bottom li"><a href="#"><i class="fa fa-align-left" aria-hidden="true"></i></a></li>
+                                   <li class="top li"><a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="stars"> <!-- stars -->
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </div> <!-- /stars -->
+                        <div>
+                            <a href="#">Aliquam Quaerat</a>
+                            <p>$134.00<del>$136.00</del></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="featured-images">
+                            <div class="img-container">
+                                <img src="images/13-378x450.jpg" alt="featured-imges">
+                            </div>
+                            <div class="ul-img">
+                                <img src="images/11-378x450.jpg" alt="featured-imges">
+                                <ul class="ul">
+                                   <li class="bottom li"><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                   <li class="top li"><a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                   <li class="bottom li"><a href="#"><i class="fa fa-align-left" aria-hidden="true"></i></a></li>
+                                   <li class="top li"><a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="stars"> <!-- stars -->
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </div> <!-- /stars -->
+                        <div>
+                            <a href="#">Aliquam Quaerat</a>
+                            <p>$104.00<del>$116.00</del></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="featured-images">
+                            <div class="img-container">
+                                <img src="images/08-378x450.jpg" alt="featured-imges">
+                            </div>
+                            <div class="ul-img">
+                                <img src="images/03-378x450.jpg" alt="featured-imges">
+                                <ul class="ul">
+                                   <li class="bottom li"><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+                                   <li class="top li"><a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                   <li class="bottom li"><a href="#"><i class="fa fa-align-left" aria-hidden="true"></i></a></li>
+                                   <li class="top li"><a href="#"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="stars"> <!-- stars -->
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </div> <!-- /stars -->
+                        <div>
+                            <a href="#">Aliquam Quaerat</a>
+                            <p>$92.00<del>$98.00</del></p>
+                        </div>
+                    </div>
+                </div> <!-- /featured-imges-content -->
+            </div> <!-- /container -->
+           </div> <!-- /featured-product -->
+           <!-- video-section -->
+            <div class="video-section"> <!-- vide-section -->
+                <div class="container"> <!-- container -->
+                    <div class="video-content"> <!-- video-content -->
+                        <div class="video">
+                            <video src="images/video.mp4" type="video/mp4" controls></video>
+                        </div>                        
+                        <div class="video-info">
+                            <a href="#">Necessitatibus Saepe Eveniet</a>
+                            <div class="data">
+                                <h2>28</h2>
+                                <p>February, 2018 </p>
+                            </div>
+                            <div class="desc">
+                                <p>
+                                    The standard Lorem Ipsum passage, used since the 1500s"Lorem ipsum dolor sit amet, consectetur <br> 
+                                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad <br>
+                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br>
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br>
+                                    Excepteur ...  
+                                </p>
+                            </div>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div> <!-- /video-content -->
+                </div> <!-- /container -->
+            </div> <!-- /video-section -->
+            <!-- logos-photos -->
+             <div class="logos-photos"> <!-- logos-photos -->
+                <div class="container"> <!-- container -->
+                    <div class="logos-content"> <!-- logos-content -->
+                        <img src="images/2-130x87.png" alt="logos">
+                        <img src="images/3-130x87.png" alt="logos">
+                        <img src="images/4-130x87.png" alt="logos">
+                        <img src="images/6-130x87.png" alt="logos">
+                        <img src="images/7-130x87.png" alt="logos">
+                        <img src="images/1-130x87.png" alt="logos">
+                        <i class="fa fa-angle-left left" aria-hidden="true"></i>
+                        <i class="fa fa-angle-right right" aria-hidden="true"></i>
+                    </div> <!-- /logos-content -->
+                </div> <!-- /container -->
+             </div> <!-- /logos-photos -->
+             <!-- footer -->
+              <div class="footer"> <!-- footer -->
+                <div class="container"> <!-- container -->
+                   <div class="footer-content"> <!-- footer-content -->
+                      <div class="upper-content"> <!-- upper-content -->
+                          <div class="content-one">
+                            <div class="footer-logo"><img src="images/footer-logo.png" alt=""></div>
+                            <div class="info">
+                                <p>Lorem Ipsum is simply dummy text of the printing and <br>
+                                 typesetting industry. LoremIpsum has been the industry's <br>
+                                  standard dummy text ever since the 1500s, Lorem Ipsum <br>
+                                   is simply dummy.
+                                </p>
+                            </div>
+                            <div class="apps">
+                                <a href="#"><img src="images/cms-footer-1.png" alt="footer"></a>
+                                <a href="#"><img src="images/cms-footer-2.png" alt="footer"></a>
+                            </div>
+                          </div>
+                          <div class="content-two">
+                            <a href="#">Information</a>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Delivery Information</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="#">Site Map</a></li>
+                            </ul>
+                          </div>
+                          <div class="content-three">
+                            <a href="#">My Account</a>
+                            <ul>
+                                <li><a href="#">My Account</a></li>
+                                <li><a href="#">Order History</a></li>
+                                <li><a href="#">Wish List</a></li>
+                                <li><a href="#">Newsletter</a></li>
+                                <li><a href="#">Returns</a></li>
+                            </ul>
+                          </div>
+                          <div class="content-four">
+                            <a href="#">Subscribe Now</a>
+                            <div class="tel"><a href="#"><i class="fa fa-telegram fa-3x" aria-hidden="true"></i></a></div>
+                            <div class="icons">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-youtube-play fa-lg" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus fa-lg" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                          </div>
+                      </div> <!-- /upper-content -->
+                    </div> <!-- footer-content -->
+                    </div> <!-- /container -->
+                      <div class="lower-content"> <!-- lower-content -->
+                        <div class="container"> <!-- container -->
+                            <div class="info">
+                                <p>Powered By <a href="#">OpenCart</a> Rocker - Furniture Store © 2024</p>
+                            </div>
+                            <div class="small-img">
+                                <img src="images/visa.png" alt="visa">
+                                <img src="images/american_express.png" alt="amierican_express">
+                                <img src="images/master_card.png" alt="master_card">
+                                <img src="images/google_wallet.png" alt="wallet">
+                            </div>
+                        </div> <!-- /container -->
+                      </div> <!-- /lower-content -->
+              </div> <!-- /footer -->
+    </body>
+    </html>
+    
